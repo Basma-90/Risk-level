@@ -52,6 +52,16 @@ app.get('/api/phas', async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
+app.get('/api/phas/:startDate/:endDate', async (req, res) => {
+
+    try {
+        const phas = await getPHAs(req.params.startDate, req.params.endDate);
+        res.json(phas);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
 
 // Export the app for Vercel
 module.exports = app;
