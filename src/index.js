@@ -30,8 +30,8 @@ app.get('/api/phas/:id', async (req, res) => {
 });
 
 app.post('/api/phas', async (req, res) => {
-    const startDate= "2000-01-01";
-    const endDate= "2000-01-02";
+    const startDate= "2021-09-04";
+    const endDate= "2021-09-05";
     try {
         await savePHAs(startDate, endDate);
         res.json({ message: 'PHAs saved successfully.' });
